@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import ListView from './ListView';
 import Header from './Header';
 import { Link } from 'react-router';
 

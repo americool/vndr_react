@@ -54,7 +54,7 @@ var Loading = React.createClass({
   },
   render: function() {
   return (
-    <div style ={styles.container}>
+    <div style={styles.container}>
       <p style={styles.content}>{this.state.text}</p>
     </div>
     )
