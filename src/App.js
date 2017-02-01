@@ -3,29 +3,27 @@ import logo from './logo.svg';
 import Rebase from 're-base';
 import VendorList from './VendorList';
 import config from './lib/config';
+import { sortBy } from './helpers/sorted';
+var Loading = require('./Loading');
 import './App.css';
-
-const some_data = [
-  {
-    vndrName: "test 1",
-    description: "ga",
-    distance: 0.1
-  },
-  {
-    vndrName: "test 2",
-    description: "newf",
-    distance: 0.2
-  },
-  {
-    vndrName: "test 3",
-    description: "bert",
-    distance: 0.3
-  },
-]
 
 const base = Rebase.createClass(config);
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state =
+    {
+      data: [],
+      isLoading: false,
+    }
+  }
+
+  listOrLoading() {
+    return this.state.isLoading === true
+    ? <Loading speed={100} text={"Loading"}/>
+    : <VendorList data={this.state.data} />
+  }
 
   fetchData() {
     this.setState({ isLoading: true });
@@ -34,9 +32,9 @@ class App extends Component {
       asArray: true,
     }).then((data) => {
       console.log(data)
-      // const sortedData = sortBy(data, 'distance');
+      const sortedData = sortBy(data, 'distance');
       this.setState({
-        data: data,
+        data: sortedData,
         isLoading: false,
       });
       console.log(this.state)
@@ -59,7 +57,7 @@ class App extends Component {
           Here is a list of crap.
         </p>
 
-        <VendorList data={some_data} />
+        {this.listOrLoading()}
 
       </div>
     );

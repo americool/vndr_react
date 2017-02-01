@@ -1,19 +1,21 @@
 import React from 'react';
+import Loading from './Loading';
 const PropTypes = React.PropTypes;
 
-function VendorList (data) {
+
+function VendorList (props) {
   return (
-    <div>
-      {data.map(vendor => (
-        <ul> {vendor.vndrName} | {vendor.description} | {vendor.description} </ul>
-        )
-      )}
-    </div>
-  );
+     <div>
+        {props.data.map(vendor => (
+          <ul> {vendor.vndrName} | {vendor.description} | {vendor.distance} mi. </ul>
+          )
+        )}
+      </div>
+    );
 }
 
 VendorList.PropTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
 }
 
 export default VendorList;
