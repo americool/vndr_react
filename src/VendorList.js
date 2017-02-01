@@ -1,5 +1,4 @@
 import React from 'react';
-import Loading from './Loading';
 const PropTypes = React.PropTypes;
 
 
