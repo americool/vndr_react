@@ -6,7 +6,7 @@ function VendorList (props) {
   return (
      <div>
         {props.data.map(vendor => (
-          <ul>{vendor.vndrName} | {vendor.description} | {vendor.distance} mi.</ul>
+          <ul key={vendor.key}>{vendor.vndrName} | {vendor.description} | {vendor.distance} mi.</ul>
           )
         )}
       </div>
