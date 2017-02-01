@@ -29,13 +29,11 @@ class ListView extends Component {
       context: this,
       asArray: true,
     }).then((data) => {
-      console.log(data)
       const sortedData = sortBy(data, 'distance');
       this.setState({
         data: sortedData,
         isLoading: false,
       });
-      console.log(this.state)
     }).catch(() => {
       console.log("error")
       this.setState({ isLoading: false });
