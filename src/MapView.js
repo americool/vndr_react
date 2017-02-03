@@ -18,5 +18,5 @@ export class MapView extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: process.env.GOOGLE
+  apiKey: process.env.GOOGLE_MAP_KEY
 })(MapView)
