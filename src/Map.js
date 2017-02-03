@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class Map extends Component {
-
+  
   componentDidMount() {
     this.loadMap();
+    console.log(this.props);
   }
 
   loadMap(){
     if(this.props && this.props.google) {
       //google is available
+      console.log("google is here")
       const {google} = this.props;
       const maps = google.maps;
 
@@ -25,6 +27,9 @@ class Map extends Component {
         zoom: zoom
       })
       this.map = new maps.Map(node, mapConfig);
+    }
+    else {
+      console.log("google is not here")
     }
   }
 

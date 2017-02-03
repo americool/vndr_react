@@ -8,6 +8,7 @@ export class MapView extends Component {
       width: '100vw',
       height: '100vh'
     }
+    console.log(this.props.google);
 
     return (
       <div style={style}>
