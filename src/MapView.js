@@ -7,8 +7,9 @@ import { sortMapData } from './helpers/pickMapData';
 
 const base = Rebase.createClass(config);
 const style = {
-  width: '100vw',
-  height: '100vh'
+  width: '100%',
+  height: '100%'
+
 }
 
 export class MapView extends Component {
