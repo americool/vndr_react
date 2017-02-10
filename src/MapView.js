@@ -9,6 +9,7 @@ const base = Rebase.createClass(config);
 const style = {
   width: '100%',
   height: '100%'
+
 }
 
 export class MapView extends Component {
